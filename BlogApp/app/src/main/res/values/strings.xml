@@ -5,4 +5,11 @@
     <string name="loginMainButton_text">LOGIN</string>
     <string name="signupMainButton_text">SIGN UP</string>
     <string name="exitMainButton_text">EXIT</string>
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="nameSignupEditText_hint">Enter name</string>
+    <string name="lastnameSignupEditText_hint">Enter last name</string>
+    <string name="emailSignupEditText">Enter email address</string>
+    <string name="passwordSignupEditText_hint">Enter password</string>
+    <string name="rePasswordSignupEditText">Retype password</string>
+    <string name="createSignupButton">CREATE ACCOUNT</string>
 </resources>
