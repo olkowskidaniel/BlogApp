@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BlogApp</string>
+    <string name="emailMainEditText_hint">email</string>
+    <string name="passwordMainEditText_hint">password</string>
+    <string name="loginMainButton_text">LOGIN</string>
+    <string name="signupMainButton_text">SIGN UP</string>
+    <string name="exitMainButton_text">EXIT</string>
+</resources>
