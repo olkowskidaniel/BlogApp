@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.daniel.blogapp.R;
+import com.example.daniel.blogapp.presenter.SignupPresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,11 +27,26 @@ public class SignupActivity extends Activity implements SignupIView{
     @BindView(R.id.createSignupButton)
     Button createSignupButton;
 
+    SignupPresenter signupPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         ButterKnife.bind(this);
+        signupPresenter = new SignupPresenter();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        signupPresenter.attach(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        signupPresenter.detach();
     }
 
     @OnClick(R.id.createSignupButton)
