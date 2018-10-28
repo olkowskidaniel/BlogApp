@@ -8,6 +8,10 @@ public class MainPresenter {
     MainIView mainIView;
     Login login;
 
+    public MainPresenter() {
+        login = new Login();
+    }
+
     public void attach(MainIView mainIView) {
         this.mainIView = mainIView;
     }
@@ -25,7 +29,6 @@ public class MainPresenter {
     }
 
     public void loginButtonClicked(String email, String password) {
-        login = new Login();
         if (!email.isEmpty() && !password.isEmpty()) {
             login.loginFromMain(email, password, this.mainIView, this);
         } else {
@@ -34,7 +37,6 @@ public class MainPresenter {
     }
 
     public boolean checkIfUserLogged() {
-        login = new Login();
         return login.isUserLogged();
     }
 

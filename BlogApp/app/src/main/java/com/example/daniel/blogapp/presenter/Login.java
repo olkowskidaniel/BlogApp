@@ -18,15 +18,15 @@ public class Login {
     }
 
     public boolean isUserLogged() {
-        if (firebaseAuth != null) {
+        if (firebaseAuth.getCurrentUser() != null) {
             return true;
         } else {
             return false;
         }
     }
 
-    public String getCurreontUser() {
-        if (firebaseAuth != null) {
+    public String getCurrentUser() {
+        if (firebaseAuth.getCurrentUser() != null) {
             return firebaseAuth.getCurrentUser().getEmail();
         } else {
             return "Failed to get email";

@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity implements MainIView {
     Button exitMainButton;
 
     MainPresenter mainPresenter;
-    Login login;
     Intent signupIntent;
     Intent blogIntent;
 
@@ -40,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements MainIView {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mainPresenter = new MainPresenter();
-        login = new Login();
         signupIntent = new Intent(MainActivity.this, SignupActivity.class);
         blogIntent = new Intent(MainActivity.this, BlogActivity.class);
     }
@@ -49,12 +47,11 @@ public class MainActivity extends AppCompatActivity implements MainIView {
     protected void onStart() {
         super.onStart();
         mainPresenter.attach(this);
-        if (login.isUserLogged()) {
+        if (mainPresenter.checkIfUserLogged()) {
             startActivity(blogIntent);
         } else {
             return;
         }
-
     }
 
     @Override
