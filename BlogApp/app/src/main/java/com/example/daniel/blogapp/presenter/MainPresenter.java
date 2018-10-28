@@ -27,7 +27,7 @@ public class MainPresenter {
     public void loginButtonClicked(String email, String password) {
         login = new Login();
         if (!email.isEmpty() && !password.isEmpty()) {
-            login.login(email, password, this.mainIView, this);
+            login.loginFromMain(email, password, this.mainIView, this);
         } else {
             mainIView.showEmptyFieldMessage("Email and password cannot be empty");
         }

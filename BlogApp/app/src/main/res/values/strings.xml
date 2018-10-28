@@ -12,4 +12,5 @@
     <string name="passwordSignupEditText_hint">Enter password</string>
     <string name="rePasswordSignupEditText">Retype password</string>
     <string name="createSignupButton">CREATE ACCOUNT</string>
+    <string name="logoutBlogButton_text">LOGOUT</string>
 </resources>

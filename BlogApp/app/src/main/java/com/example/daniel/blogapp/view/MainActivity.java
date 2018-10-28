@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.daniel.blogapp.R;
+import com.example.daniel.blogapp.presenter.Login;
 import com.example.daniel.blogapp.presenter.MainPresenter;
 
 import butterknife.BindView;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements MainIView {
     Button exitMainButton;
 
     MainPresenter mainPresenter;
+    Login login;
     Intent signupIntent;
     Intent blogIntent;
 
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements MainIView {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mainPresenter = new MainPresenter();
+        login = new Login();
         signupIntent = new Intent(MainActivity.this, SignupActivity.class);
         blogIntent = new Intent(MainActivity.this, BlogActivity.class);
     }
@@ -46,6 +49,11 @@ public class MainActivity extends AppCompatActivity implements MainIView {
     protected void onStart() {
         super.onStart();
         mainPresenter.attach(this);
+        if (login.isUserLogged()) {
+            startActivity(blogIntent);
+        } else {
+            return;
+        }
 
     }
 
